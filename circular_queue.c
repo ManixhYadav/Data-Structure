@@ -1,0 +1,26 @@
+#include <stdio.h>
+#define MAX 5
+
+int cq[MAX], front = -1, rear = -1;
+
+void enqueue(int x) {
+    if ((rear + 1) % MAX == front)
+        printf("Overflow\n");
+    else {
+        if (front == -1) front = 0;
+        rear = (rear + 1) % MAX;
+        cq[rear] = x;
+    }
+}
+
+void dequeue() {
+    if (front == -1)
+        printf("Underflow\n");
+    else {
+        printf("Deleted: %d\n", cq[front]);
+        if (front == rear)
+            front = rear = -1;
+        else
+            front = (front + 1) % MAX;
+    }
+}
