@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int partition(int a[], int low, int high) {
-    int pivot = a[low];   // choose first element as pivot
+    int pivot = a[low]; 
     int i = low + 1;
     int j = high;
     int temp;
